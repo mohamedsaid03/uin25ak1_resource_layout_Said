@@ -13,10 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const ressursListe = document.getElementById("ressurs-liste");
     const knapper = document.querySelectorAll("nav button");
 
-    // Standardvisning: HTML-ressurser
     visRessurser("HTML");
 
-    // Legg til klikkhendelser på knappene
     knapper.forEach(knapp => {
         knapp.addEventListener("click", () => {
             document.querySelector("nav button.active").classList.remove("active");
@@ -26,23 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function visRessurser(kategori) {
+        const filtrerteRessurser = ressurser.filter(r => r.kategori === kategori);
+        const listeHTML = filtrerteRessurser.map(r =>
+            `<li><a href="${r.url}" target="_blank">${r.navn}</a></li>`
+        ).join("");
+
         ressursListe.innerHTML = `
             <h2>${kategori}</h2>
             <p>${beskrivelse(kategori)}</p>
-            <ul></ul>
+            <ul>${listeHTML}</ul>
         `;
-        const ul = ressursListe.querySelector("ul");
-
-        const filtrerteRessurser = ressurser.filter(r => r.kategori === kategori);
-        filtrerteRessurser.forEach(ressurs => {
-            const li = document.createElement("li");
-            const link = document.createElement("a");
-            link.href = ressurs.url;
-            link.textContent = ressurs.navn;
-            link.target = "_blank";
-            li.appendChild(link);
-            ul.appendChild(li);
-        });
     }
 
     function beskrivelse(kategori) {
