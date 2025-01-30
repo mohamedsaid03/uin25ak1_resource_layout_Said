@@ -1,0 +1,93 @@
+/* Globale stiler */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #E1E5EE; /* Lys bakgrunn */
+    color: #2A324B; /* Mørk tekst */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2A324B; /* Mørk blå */
+    color: #fff; /* Hvit tekst */
+    font-size: 2rem;
+}
+
+/* Navigasjon */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: #58699D; /* Mellomblå */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav button {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #E1E5EE;
+    color: #2A324B;
+    transition: all 0.3s ease;
+}
+
+nav button.active {
+    background-color: #fff; /* Hvit for aktiv knapp */
+    color: #2A324B;
+    border: 2px solid #58699D; /* Mellomblå ramme */
+}
+
+/* Main-innhold */
+main {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#ressurs-liste {
+    background: #fff; /* Hvit bakgrunn */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+#ressurs-liste h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#ressurs-liste ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+#ressurs-liste li {
+    margin: 0.5rem 0;
+}
+
+#ressurs-liste a {
+    color: #58699D;
+    text-decoration: none;
+}
+
+#ressurs-liste a:hover {
+    text-decoration: underline;
+}
